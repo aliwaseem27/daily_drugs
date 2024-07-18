@@ -28,15 +28,18 @@ class DrugInfoTile extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            flex: 7,
             child: Container(
               padding: EdgeInsets.all(AppSizes.xs),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(AppSizes.borderRadiusMd),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(AppSizes.borderRadiusMd),
+                  bottomLeft: Radius.circular(AppSizes.borderRadiusMd),
+                ),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     drug.name,
@@ -44,8 +47,10 @@ class DrugInfoTile extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text("Quantity: "),
-                      Text(drug.quantity.toString()),
+                      Text("Qty: "),
+                      Text(
+                        drug.quantity.toString(),
+                      ),
                     ],
                   ),
                 ],
