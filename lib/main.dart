@@ -1,6 +1,6 @@
+import 'package:daily_drugs/presentation/drugs_order_list_screen/drugs_order_list_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'drugs_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: const DrugsScreen(),
+      home: const DrugsOrderListScreen(),
     );
   }
 }
