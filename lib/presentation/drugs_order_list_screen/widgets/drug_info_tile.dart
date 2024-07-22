@@ -14,13 +14,13 @@ class DrugInfoTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: AppSizes.xs, top: AppSizes.xs, bottom: AppSizes.xs),
+      padding: const EdgeInsets.only(left: AppSizes.xs, top: AppSizes.xs, bottom: AppSizes.xs),
       decoration: BoxDecoration(
         border: Border.all(
           color: drug.isSelected ? Colors.transparent : Colors.black38,
         ),
         color: drug.isSelected ? Colors.green : Colors.transparent,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(AppSizes.borderRadiusMd),
           bottomLeft: Radius.circular(AppSizes.borderRadiusMd),
         ),
@@ -29,8 +29,8 @@ class DrugInfoTile extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              padding: EdgeInsets.all(AppSizes.xs),
-              decoration: BoxDecoration(
+              padding: const EdgeInsets.all(AppSizes.xs),
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(AppSizes.borderRadiusMd),
@@ -47,7 +47,7 @@ class DrugInfoTile extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text("Qty: "),
+                      const Text("Qty: "),
                       Text(
                         drug.quantity.toString(),
                       ),

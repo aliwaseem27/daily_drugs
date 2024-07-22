@@ -22,7 +22,7 @@ class QuantityCustomizer extends StatelessWidget {
         width: MediaQuery.of(context).size.width * 0.8,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(AppSizes.borderRadiusMd),
             bottomRight: Radius.circular(AppSizes.borderRadiusMd),
           ),
@@ -31,7 +31,7 @@ class QuantityCustomizer extends StatelessWidget {
               color: Colors.grey.withOpacity(0.2),
               spreadRadius: 1,
               blurRadius: 1,
-              offset: Offset(0, 1),
+              offset: const Offset(0, 1),
             ),
           ],
         ),
@@ -45,7 +45,7 @@ class QuantityCustomizer extends StatelessWidget {
                   onChanged: (value) {},
                 ),
               ),
-              VerticalDivider(),
+              const VerticalDivider(),
               Expanded(
                 child: TextField(
                   decoration: InputDecoration(

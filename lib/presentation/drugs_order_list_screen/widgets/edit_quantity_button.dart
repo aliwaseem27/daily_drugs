@@ -10,14 +10,14 @@ class EditQuantityButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: Colors.teal,
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(AppSizes.borderRadiusMd),
             bottomRight: Radius.circular(AppSizes.borderRadiusMd),
           )),
       child: IconButton(
-        icon: Icon(
+        icon: const Icon(
           Icons.edit_note,
           color: Colors.white,
         ),

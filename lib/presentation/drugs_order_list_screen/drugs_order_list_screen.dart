@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../domain/drug.dart';
 import '../../domain/enums.dart';
 import '../../utils/constants/app_sizes.dart';
+import 'blocs/drugs_order_bloc.dart';
 import 'widgets/drug_info_tile.dart';
 import 'widgets/edit_quantity_button.dart';
 import 'widgets/quantity_customizer.dart';
@@ -21,94 +22,98 @@ class _DrugsOrderListScreenState extends State<DrugsOrderListScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final drugs = <Drug>[
-      Drug(name: 'Paracetamol v.', category: Category.vials, quantity: 6),
-      Drug(name: 'Sevelamir tab.', category: Category.tabs, quantity: 120, isSelected: false),
-      Drug(name: 'Calcium tab.', category: Category.tabs, quantity: 60, isSelected: true),
-      Drug(name: 'Fucidin Cream', category: Category.others, quantity: 24, isSelected: true),
-      Drug(name: 'Paracetamol v.', category: Category.vials, quantity: 6),
-      Drug(name: 'Sevelamir tab.', category: Category.tabs, quantity: 120, isSelected: false),
-      Drug(name: 'Calcium tab.', category: Category.tabs, quantity: 60, isSelected: true),
-      Drug(name: 'Fucidin Cream', category: Category.others, quantity: 24, isSelected: true),
-      Drug(name: 'Paracetamol v.', category: Category.vials, quantity: 6),
-      Drug(name: 'Sevelamir tab.', category: Category.tabs, quantity: 120, isSelected: false),
-      Drug(name: 'Calcium tab.', category: Category.tabs, quantity: 60, isSelected: true),
-      Drug(name: 'Fucidin Cream', category: Category.others, quantity: 24, isSelected: true),
-      Drug(name: 'Paracetamol v.', category: Category.vials, quantity: 6),
-      Drug(name: 'Sevelamir tab.', category: Category.tabs, quantity: 120, isSelected: false),
-      Drug(name: 'Calcium tab.', category: Category.tabs, quantity: 60, isSelected: true),
-      Drug(name: 'Fucidin Cream', category: Category.others, quantity: 24, isSelected: true),
-    ];
-
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(AppSizes.defaultSpace),
+        padding: const EdgeInsets.all(AppSizes.defaultSpace),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              ListView.separated(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: Category.values.length,
-                itemBuilder: (context, index) {
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        Category.values[index].name,
-                        style: Theme.of(context).textTheme.headlineSmall,
-                      ),
-                      ListView.separated(
+              BlocBuilder<DrugsOrderBloc, DrugsOrderState>(
+                builder: (context, state) {
+                  return state.map(
+                    initial: (state) {
+                      return const SizedBox();
+                    },
+                    loading: (state) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    },
+                    loaded: (state) {
+                      final drugs = state.drugs;
+                      print(drugs[0].name);
+                      return ListView.separated(
                         shrinkWrap: true,
-                        itemCount: drugs.length,
                         physics: const NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, secIndex) {
-                          if (drugs[secIndex].category != Category.values[index]) {
-                            return const SizedBox();
-                          }
-                          return Container(
-                            margin: EdgeInsets.only(bottom: AppSizes.sm),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                // Drug Info Tile
-                                GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      show = !show;
-                                    });
-                                  },
-                                  child: IntrinsicHeight(
-                                    child: Row(
-                                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                        itemCount: Category.values.length,
+                        itemBuilder: (context, index) {
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                Category.values[index].name,
+                                style: Theme.of(context).textTheme.headlineSmall,
+                              ),
+                              ListView.separated(
+                                shrinkWrap: true,
+                                itemCount: drugs.length,
+                                physics: const NeverScrollableScrollPhysics(),
+                                itemBuilder: (context, secIndex) {
+                                  if (drugs[secIndex].category != Category.values[index]) {
+                                    return const SizedBox();
+                                  }
+                                  return Container(
+                                    margin: const EdgeInsets.only(bottom: AppSizes.sm),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        Expanded(
-                                          flex: 5,
-                                          child: DrugInfoTile(drug: drugs[secIndex]),
+                                        // Drug Info Tile
+                                        GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              show = !show;
+                                            });
+                                          },
+                                          child: IntrinsicHeight(
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                                              children: [
+                                                Expanded(
+                                                  flex: 5,
+                                                  child: DrugInfoTile(drug: drugs[secIndex]),
+                                                ),
+                                                const Expanded(
+                                                  child: EditQuantityButton(),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
                                         ),
-                                        Expanded(
-                                          child: EditQuantityButton(),
-                                        ),
+
+                                        // Quantity Customizer
+                                        QuantityCustomizer(show: show, drug: drugs[secIndex]),
                                       ],
                                     ),
-                                  ),
-                                ),
-
-                                // Quantity Customizer
-                                QuantityCustomizer(show: show, drug: drugs[secIndex]),
-                              ],
-                            ),
+                                  );
+                                },
+                                separatorBuilder: (context, index) {
+                                  return const SizedBox();
+                                },
+                              ),
+                            ],
                           );
                         },
                         separatorBuilder: (context, index) {
-                          return const SizedBox();
+                          return const Divider();
                         },
-                      ),
-                    ],
+                      );
+                    },
+                    error: (state) {
+                      return Center(
+                        child: Text(state.message),
+                      );
+                    },
                   );
-                },
-                separatorBuilder: (context, index) {
-                  return Divider();
                 },
               ),
             ],
