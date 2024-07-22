@@ -10,6 +10,8 @@ import 'widgets/quantity_customizer.dart';
 class DrugsOrderListScreen extends StatefulWidget {
   const DrugsOrderListScreen({super.key});
 
+  static const String titleName = 'Drugs Order List';
+
   @override
   State<DrugsOrderListScreen> createState() => _DrugsOrderListScreenState();
 }
@@ -64,39 +66,42 @@ class _DrugsOrderListScreenState extends State<DrugsOrderListScreen> {
                           if (drugs[secIndex].category != Category.values[index]) {
                             return const SizedBox();
                           }
-                          return Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              // Drug Info Tile
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    show = !show;
-                                  });
-                                },
-                                child: IntrinsicHeight(
-                                  child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                                    children: [
-                                      Expanded(
-                                        flex: 5,
-                                        child: DrugInfoTile(drug: drugs[secIndex]),
-                                      ),
-                                      Expanded(
-                                        child: EditQuantityButton(),
-                                      ),
-                                    ],
+                          return Container(
+                            margin: EdgeInsets.only(bottom: AppSizes.sm),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                // Drug Info Tile
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      show = !show;
+                                    });
+                                  },
+                                  child: IntrinsicHeight(
+                                    child: Row(
+                                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                                      children: [
+                                        Expanded(
+                                          flex: 5,
+                                          child: DrugInfoTile(drug: drugs[secIndex]),
+                                        ),
+                                        Expanded(
+                                          child: EditQuantityButton(),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
 
-                              // Quantity Customizer
-                              QuantityCustomizer(show: show, drug: drugs[secIndex]),
-                            ],
+                                // Quantity Customizer
+                                QuantityCustomizer(show: show, drug: drugs[secIndex]),
+                              ],
+                            ),
                           );
                         },
                         separatorBuilder: (context, index) {
-                          return const SizedBox(height: AppSizes.sm);
+                          return const SizedBox();
                         },
                       ),
                     ],
