@@ -1,6 +1,9 @@
+import 'package:daily_drugs/features/drug_collections/presentation/blocs/drug_collections_bloc.dart';
+import 'package:daily_drugs/features/drug_collections/presentation/screens/drug_collections.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../injection.dart';
 import '../history/presentation/screens/history_screen.dart';
 import '../new_order/presentation/drugs_order_list_screen/blocs/drugs_order_bloc.dart';
 import '../new_order/presentation/drugs_order_list_screen/drugs_order_list_screen.dart';
@@ -17,6 +20,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   int _selectedIndex = 0;
   final _listPage = [
     const DrugsOrderListScreen(),
+    const DrugCollectionsScreen(),
     const HistoryScreen(),
     const SettingsScreen(),
   ];
@@ -38,6 +42,9 @@ class _NavigationScreenState extends State<NavigationScreen> {
           BlocProvider<DrugsOrderBloc>(
             create: (context) => DrugsOrderBloc()..add(const DrugsOrderEvent.loadDrugs()),
           ),
+          BlocProvider(
+            create: (context) => getIt<DrugCollectionsBloc>()..add(const DrugCollectionsEvent.getDrugCollections()),
+          ),
         ],
         child: _listPage.elementAt(_selectedIndex),
       ),
@@ -58,16 +65,23 @@ class _NavigationScreenState extends State<NavigationScreen> {
               },
             ),
             ListTile(
-              title: const Text('History'),
+              title: const Text('Drugs Collection Screen'),
               onTap: () {
                 _onItemTapped(1);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: const Text('Settings'),
+              title: const Text('History'),
               onTap: () {
                 _onItemTapped(2);
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Settings'),
+              onTap: () {
+                _onItemTapped(3);
                 Navigator.pop(context);
               },
             ),

@@ -3,8 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc_observer.dart';
 import 'features/navigation/navigation_screen.dart';
+import 'injection.dart';
 
 void main() {
+  configureDependencies();
   runApp(const MyApp());
   Bloc.observer = AppBlocObserver();
 }
