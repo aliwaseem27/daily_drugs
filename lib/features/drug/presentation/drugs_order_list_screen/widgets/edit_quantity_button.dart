@@ -1,6 +1,6 @@
+import 'package:daily_drugs/core/utils/constants/constants.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/constants/constants.dart';
 
 class EditQuantityButton extends StatelessWidget {
   const EditQuantityButton({

@@ -1,8 +1,8 @@
+import 'package:daily_drugs/core/utils/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../domain/enums.dart';
-import '../../utils/constants/app_sizes.dart';
 import 'blocs/drugs_order_bloc.dart';
 import 'widgets/drug_info_tile.dart';
 import 'widgets/edit_quantity_button.dart';
