@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc_observer.dart';
-import 'features/drug/presentation/navigation_screen/navigation_screen.dart';
+import 'features/navigation/navigation_screen.dart';
 
 void main() {
   runApp(const MyApp());

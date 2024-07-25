@@ -1,4 +1,4 @@
-import 'enums.dart';
+import '../../../../core/enums/enums.dart';
 
 class Drug {
   String name;

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../drugs_order_list_screen/blocs/drugs_order_bloc.dart';
-import '../drugs_order_list_screen/drugs_order_list_screen.dart';
-import '../history_screen/history_screen.dart';
-import '../settings_screen/settings_screen.dart';
+import '../history/presentation/screens/history_screen.dart';
+import '../new_order/presentation/drugs_order_list_screen/blocs/drugs_order_bloc.dart';
+import '../new_order/presentation/drugs_order_list_screen/drugs_order_list_screen.dart';
+import '../settings/presentation/screens/settings_screen.dart';
 
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({super.key});
