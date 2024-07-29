@@ -20,18 +20,21 @@ mixin _$DrugCollectionsEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getDrugCollections,
+    required TResult Function(DrugCollection collection) addDrugCollection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getDrugCollections,
+    TResult? Function(DrugCollection collection)? addDrugCollection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getDrugCollections,
+    TResult Function(DrugCollection collection)? addDrugCollection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$DrugCollectionsEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetDrugCollections value) getDrugCollections,
+    required TResult Function(_AddDrugCollection value) addDrugCollection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetDrugCollections value)? getDrugCollections,
+    TResult? Function(_AddDrugCollection value)? addDrugCollection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetDrugCollections value)? getDrugCollections,
+    TResult Function(_AddDrugCollection value)? addDrugCollection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -115,6 +121,7 @@ class _$StartedImpl implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getDrugCollections,
+    required TResult Function(DrugCollection collection) addDrugCollection,
   }) {
     return started();
   }
@@ -124,6 +131,7 @@ class _$StartedImpl implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getDrugCollections,
+    TResult? Function(DrugCollection collection)? addDrugCollection,
   }) {
     return started?.call();
   }
@@ -133,6 +141,7 @@ class _$StartedImpl implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getDrugCollections,
+    TResult Function(DrugCollection collection)? addDrugCollection,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -146,6 +155,7 @@ class _$StartedImpl implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetDrugCollections value) getDrugCollections,
+    required TResult Function(_AddDrugCollection value) addDrugCollection,
   }) {
     return started(this);
   }
@@ -155,6 +165,7 @@ class _$StartedImpl implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetDrugCollections value)? getDrugCollections,
+    TResult? Function(_AddDrugCollection value)? addDrugCollection,
   }) {
     return started?.call(this);
   }
@@ -164,6 +175,7 @@ class _$StartedImpl implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetDrugCollections value)? getDrugCollections,
+    TResult Function(_AddDrugCollection value)? addDrugCollection,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -217,6 +229,7 @@ class _$GetDrugCollectionsImpl implements _GetDrugCollections {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getDrugCollections,
+    required TResult Function(DrugCollection collection) addDrugCollection,
   }) {
     return getDrugCollections();
   }
@@ -226,6 +239,7 @@ class _$GetDrugCollectionsImpl implements _GetDrugCollections {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getDrugCollections,
+    TResult? Function(DrugCollection collection)? addDrugCollection,
   }) {
     return getDrugCollections?.call();
   }
@@ -235,6 +249,7 @@ class _$GetDrugCollectionsImpl implements _GetDrugCollections {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getDrugCollections,
+    TResult Function(DrugCollection collection)? addDrugCollection,
     required TResult orElse(),
   }) {
     if (getDrugCollections != null) {
@@ -248,6 +263,7 @@ class _$GetDrugCollectionsImpl implements _GetDrugCollections {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetDrugCollections value) getDrugCollections,
+    required TResult Function(_AddDrugCollection value) addDrugCollection,
   }) {
     return getDrugCollections(this);
   }
@@ -257,6 +273,7 @@ class _$GetDrugCollectionsImpl implements _GetDrugCollections {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetDrugCollections value)? getDrugCollections,
+    TResult? Function(_AddDrugCollection value)? addDrugCollection,
   }) {
     return getDrugCollections?.call(this);
   }
@@ -266,6 +283,7 @@ class _$GetDrugCollectionsImpl implements _GetDrugCollections {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetDrugCollections value)? getDrugCollections,
+    TResult Function(_AddDrugCollection value)? addDrugCollection,
     required TResult orElse(),
   }) {
     if (getDrugCollections != null) {
@@ -277,6 +295,148 @@ class _$GetDrugCollectionsImpl implements _GetDrugCollections {
 
 abstract class _GetDrugCollections implements DrugCollectionsEvent {
   const factory _GetDrugCollections() = _$GetDrugCollectionsImpl;
+}
+
+/// @nodoc
+abstract class _$$AddDrugCollectionImplCopyWith<$Res> {
+  factory _$$AddDrugCollectionImplCopyWith(_$AddDrugCollectionImpl value,
+          $Res Function(_$AddDrugCollectionImpl) then) =
+      __$$AddDrugCollectionImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DrugCollection collection});
+}
+
+/// @nodoc
+class __$$AddDrugCollectionImplCopyWithImpl<$Res>
+    extends _$DrugCollectionsEventCopyWithImpl<$Res, _$AddDrugCollectionImpl>
+    implements _$$AddDrugCollectionImplCopyWith<$Res> {
+  __$$AddDrugCollectionImplCopyWithImpl(_$AddDrugCollectionImpl _value,
+      $Res Function(_$AddDrugCollectionImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? collection = null,
+  }) {
+    return _then(_$AddDrugCollectionImpl(
+      null == collection
+          ? _value.collection
+          : collection // ignore: cast_nullable_to_non_nullable
+              as DrugCollection,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddDrugCollectionImpl implements _AddDrugCollection {
+  const _$AddDrugCollectionImpl(this.collection);
+
+  @override
+  final DrugCollection collection;
+
+  @override
+  String toString() {
+    return 'DrugCollectionsEvent.addDrugCollection(collection: $collection)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddDrugCollectionImpl &&
+            (identical(other.collection, collection) ||
+                other.collection == collection));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, collection);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddDrugCollectionImplCopyWith<_$AddDrugCollectionImpl> get copyWith =>
+      __$$AddDrugCollectionImplCopyWithImpl<_$AddDrugCollectionImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getDrugCollections,
+    required TResult Function(DrugCollection collection) addDrugCollection,
+  }) {
+    return addDrugCollection(collection);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getDrugCollections,
+    TResult? Function(DrugCollection collection)? addDrugCollection,
+  }) {
+    return addDrugCollection?.call(collection);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getDrugCollections,
+    TResult Function(DrugCollection collection)? addDrugCollection,
+    required TResult orElse(),
+  }) {
+    if (addDrugCollection != null) {
+      return addDrugCollection(collection);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetDrugCollections value) getDrugCollections,
+    required TResult Function(_AddDrugCollection value) addDrugCollection,
+  }) {
+    return addDrugCollection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetDrugCollections value)? getDrugCollections,
+    TResult? Function(_AddDrugCollection value)? addDrugCollection,
+  }) {
+    return addDrugCollection?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetDrugCollections value)? getDrugCollections,
+    TResult Function(_AddDrugCollection value)? addDrugCollection,
+    required TResult orElse(),
+  }) {
+    if (addDrugCollection != null) {
+      return addDrugCollection(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddDrugCollection implements DrugCollectionsEvent {
+  const factory _AddDrugCollection(final DrugCollection collection) =
+      _$AddDrugCollectionImpl;
+
+  DrugCollection get collection;
+  @JsonKey(ignore: true)
+  _$$AddDrugCollectionImplCopyWith<_$AddDrugCollectionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

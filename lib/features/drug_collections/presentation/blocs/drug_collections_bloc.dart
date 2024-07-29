@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:daily_drugs/features/drug_collections/data/repositories/drug_collection_repo_impl.dart';
-import 'package:daily_drugs/features/drug_collections/domain/repositories/drug_collection_repo.dart';
+import 'package:daily_drugs/features/drug_collections/domain/usecases/add_new_collection.dart';
 import 'package:daily_drugs/features/drug_collections/domain/usecases/get_all_collections.dart';
 import 'package:daily_drugs/injection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -16,9 +15,7 @@ part 'drug_collections_bloc.freezed.dart';
 
 @injectable
 class DrugCollectionsBloc extends Bloc<DrugCollectionsEvent, DrugCollectionsState> {
-
   DrugCollectionsBloc() : super(const DrugCollectionsState.initial()) {
-
     on<_GetDrugCollections>((event, emit) async {
       emit(const DrugCollectionsState.loading());
 
@@ -29,6 +26,11 @@ class DrugCollectionsBloc extends Bloc<DrugCollectionsEvent, DrugCollectionsStat
       } else {
         emit(const DrugCollectionsState.error(message: "there is no collections"));
       }
+    });
+
+    on<_AddDrugCollection>((event, emit) async {
+      await getIt<AddNewCollection>().call(event.collection);
+      print("Collection Added");
     });
   }
 }

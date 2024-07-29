@@ -13,5 +13,5 @@ class DrugCollectionModel {
 
   late String description;
 
-  final drugs = IsarLinks<DrugModel>();
+   final drugs = IsarLinks<DrugModel>();
 }

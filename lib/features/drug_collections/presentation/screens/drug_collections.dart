@@ -1,4 +1,5 @@
 import 'package:daily_drugs/core/utils/constants/app_sizes.dart';
+import 'package:daily_drugs/features/drug_collections/domain/entities/drug_collection.dart';
 import 'package:daily_drugs/features/drug_collections/presentation/blocs/drug_collections_bloc.dart';
 import 'package:daily_drugs/features/drug_collections/presentation/blocs/drug_collections_bloc.dart';
 import 'package:flutter/material.dart';
@@ -52,6 +53,22 @@ class DrugCollectionsScreen extends StatelessWidget {
                     },
                     error: (_) => Center(child: const Text('Error loading collections')));
               },
+            ),
+            const SizedBox(height: AppSizes.xl),
+            ElevatedButton(
+              onPressed: () {
+                context.read<DrugCollectionsBloc>().add(
+                      DrugCollectionsEvent.addDrugCollection(
+                        DrugCollection(
+                            id: 2,
+                            name: "Daily Drugs Order",
+                            description: "This is the daily drugs order for Dialysis",
+                            drugs: []),
+                      ),
+                    );
+                print("pressed");
+              },
+              child: const Text('Add a Collection'),
             ),
           ],
         ),
