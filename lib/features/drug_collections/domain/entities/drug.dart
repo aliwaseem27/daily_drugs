@@ -1,15 +1,19 @@
 import '../../../../core/enums/enums.dart';
 
 class Drug {
+  int id;
   String name;
   int quantity;
-  bool isSelected;
+  int minQuantity;
+  int maxQuantity;
   Category category;
 
   Drug({
+    required this.id,
     required this.name,
     required this.quantity,
-    this.isSelected = false,
+    required this.minQuantity,
+    required this.maxQuantity,
     required this.category,
   });
 }

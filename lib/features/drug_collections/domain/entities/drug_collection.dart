@@ -1,7 +1,7 @@
-import '../../../new_order/domain/entities/drug.dart';
+import 'drug.dart';
 
 class DrugCollection {
-  final String id;
+  final int id;
   final String name;
   final String description;
   final List<Drug> drugs;
@@ -9,7 +9,7 @@ class DrugCollection {
   DrugCollection({
     required this.id,
     required this.name,
-    this.description = "",
+    required this.description,
     required this.drugs,
   });
 }

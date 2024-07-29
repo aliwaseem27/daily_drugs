@@ -2,7 +2,7 @@ import 'package:daily_drugs/core/enums/enums.dart';
 import 'package:daily_drugs/features/drug_collections/data/datasources/drug_collections_local_data_source.dart';
 import 'package:daily_drugs/features/drug_collections/domain/entities/drug_collection.dart';
 import 'package:daily_drugs/features/drug_collections/domain/repositories/drug_collection_repo.dart';
-import 'package:daily_drugs/features/new_order/domain/entities/drug.dart';
+import 'package:daily_drugs/features/drug_collections/domain/entities/drug.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: DrugCollectionRepo)

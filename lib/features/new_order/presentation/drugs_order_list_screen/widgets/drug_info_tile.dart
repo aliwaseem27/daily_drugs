@@ -1,7 +1,7 @@
 import 'package:daily_drugs/core/utils/constants/constants.dart';
 import 'package:flutter/material.dart';
 
-import '../../../domain/entities/drug.dart';
+import '../../../../drug_collections/domain/entities/drug.dart';
 
 
 class DrugInfoTile extends StatelessWidget {
@@ -18,9 +18,9 @@ class DrugInfoTile extends StatelessWidget {
       padding: const EdgeInsets.only(left: AppSizes.xs, top: AppSizes.xs, bottom: AppSizes.xs),
       decoration: BoxDecoration(
         border: Border.all(
-          color: drug.isSelected ? Colors.transparent : Colors.black38,
+          color: true ? Colors.transparent : Colors.black38,
         ),
-        color: drug.isSelected ? Colors.green : Colors.transparent,
+        color: false ? Colors.green : Colors.transparent,
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(AppSizes.borderRadiusMd),
           bottomLeft: Radius.circular(AppSizes.borderRadiusMd),

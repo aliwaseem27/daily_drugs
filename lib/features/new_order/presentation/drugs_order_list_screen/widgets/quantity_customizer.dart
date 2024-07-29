@@ -1,7 +1,7 @@
 import 'package:daily_drugs/core/utils/constants/constants.dart';
 import 'package:flutter/material.dart';
 
-import '../../../domain/entities/drug.dart';
+import '../../../../drug_collections/domain/entities/drug.dart';
 
 
 class QuantityCustomizer extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:daily_drugs/features/new_order/domain/entities/drug.dart';
+import 'package:daily_drugs/features/drug_collections/domain/entities/drug.dart';
 import 'package:injectable/injectable.dart';
 
 import '../entities/drug_collection.dart';

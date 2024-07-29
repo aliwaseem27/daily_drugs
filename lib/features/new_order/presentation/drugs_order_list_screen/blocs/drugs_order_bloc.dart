@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../../core/enums/enums.dart';
-import '../../../domain/entities/drug.dart';
+import '../../../../drug_collections/domain/entities/drug.dart';
 
 
 part 'drugs_order_event.dart';
@@ -15,10 +15,14 @@ class DrugsOrderBloc extends Bloc<DrugsOrderEvent, DrugsOrderState> {
       emit(const DrugsOrderState.loading());
 
       final List<Drug> drugs = [
-        Drug(name: 'Paracetamol v.', category: Category.vials, quantity: 6),
-        Drug(name: 'Sevelamir tab.', category: Category.tabs, quantity: 120, isSelected: false),
-        Drug(name: 'Calcium tab.', category: Category.tabs, quantity: 60, isSelected: true),
-        Drug(name: 'Fucidin Cream', category: Category.others, quantity: 24, isSelected: true),
+        Drug(
+          id: 123,
+          name: "Paracetamol",
+          quantity: 12,
+          minQuantity: 0,
+          maxQuantity: 20,
+          category: Category.vials,
+        ),
       ];
       
       if (drugs.isEmpty) {
