@@ -5,7 +5,9 @@ import 'package:daily_drugs/injection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../data/models/drug_collection_model.dart';
 import '../../domain/entities/drug_collection.dart';
+import '../../domain/usecases/delete_drug_collection.dart';
 
 part 'drug_collections_event.dart';
 
@@ -30,6 +32,11 @@ class DrugCollectionsBloc extends Bloc<DrugCollectionsEvent, DrugCollectionsStat
 
     on<_AddDrugCollection>((event, emit) async {
       await getIt<AddNewCollection>().call(event.collection);
+      print("Collection Added");
+    });
+
+    on<_DeleteDrugCollection>((event, emit) async {
+      await getIt<DeleteDrugCollection>().call(event.index);
       print("Collection Added");
     });
   }

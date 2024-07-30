@@ -6,7 +6,7 @@ class DrugCollectionsState with _$DrugCollectionsState {
 
   const factory DrugCollectionsState.loading() = _Loading;
 
-  const factory DrugCollectionsState.loaded({required List<DrugCollection> drugCollections}) = _Loaded;
+  const factory DrugCollectionsState.loaded({required List<DrugCollectionModel> drugCollections}) = _Loaded;
 
   const factory DrugCollectionsState.error({required String message}) = _Error;
 }

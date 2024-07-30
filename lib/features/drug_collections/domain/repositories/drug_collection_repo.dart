@@ -1,22 +1,22 @@
-import 'package:daily_drugs/features/drug_collections/domain/entities/drug.dart';
-import 'package:injectable/injectable.dart';
 
-import '../entities/drug_collection.dart';
+
+import 'package:daily_drugs/features/drug_collections/data/models/drug_collection_model.dart';
+import 'package:daily_drugs/features/drug_collections/data/models/drug_model.dart';
 
 abstract class DrugCollectionRepo {
-  Future<List<DrugCollection>> getAllCollections();
+  Future<List<DrugCollectionModel>> getAllCollections();
 
-  Future<DrugCollection> getCollectionById(int id);
+  Future<DrugCollectionModel> getCollectionById(int id);
 
-  Future<void> addCollection(DrugCollection collection);
+  Future<void> addCollection(DrugCollectionModel collection);
 
-  Future<void> updateCollection(DrugCollection collection);
+  Future<void> updateCollection(DrugCollectionModel collection);
 
-  Future<void> deleteCollection(DrugCollection collection);
+  Future<void> deleteCollection(int index);
 
-  Future<void> addDrugToCollection(int collectionId, Drug drug);
+  Future<void> addDrugToCollection(int collectionId, DrugModel drug);
 
-  Future<void> deleteDrugFromCollection(int collectionId, Drug drug);
+  Future<void> deleteDrugFromCollection(int collectionId, DrugModel drug);
 
-  Future<void> editDrugInCollection(int collectionId, Drug drug);
+  Future<void> editDrugInCollection(int collectionId, DrugModel drug);
 }

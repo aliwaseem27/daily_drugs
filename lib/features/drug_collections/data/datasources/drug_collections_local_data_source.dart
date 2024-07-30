@@ -18,4 +18,10 @@ class DrugCollectionsLocalDataSource {
       await isar.drugCollectionModels.put(collectionModel);
     });
   }
+
+  Future<void> deleteDrugCollection(int index) async {
+    return await isar.writeTxn(() async {
+      await isar.drugCollectionModels.delete(index);
+    });
+  }
 }

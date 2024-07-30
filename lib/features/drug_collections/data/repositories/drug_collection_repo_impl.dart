@@ -17,70 +17,53 @@ class DrugCollectionRepoImpl implements DrugCollectionRepo {
   DrugCollectionRepoImpl({required this.localDataSource});
 
   @override
-  Future<void> addCollection(DrugCollection collection) async {
-    final DrugCollectionModel collectionModel = DrugCollectionModel()
-      ..name = collection.name
-      ..description = collection.description;
-    localDataSource.addDrugCollection(collectionModel);
+  Future<void> addCollection(DrugCollectionModel collection)  async {
+     await localDataSource.addDrugCollection(collection);
   }
 
   @override
-  Future<void> addDrugToCollection(int collectionId, Drug drug) {
+  Future<void> addDrugToCollection(int collectionId, DrugModel drug) {
     // TODO: implement addDrugToCollection
     throw UnimplementedError();
   }
 
   @override
-  Future<void> deleteCollection(DrugCollection collection) {
-    // TODO: implement deleteCollection
-    throw UnimplementedError();
+  Future<void> deleteCollection(int index) async {
+    await localDataSource.deleteDrugCollection(index);
   }
 
   @override
-  Future<void> deleteDrugFromCollection(int collectionId, Drug drug) {
+  Future<void> deleteDrugFromCollection(int collectionId, DrugModel drug) {
     // TODO: implement deleteDrugFromCollection
     throw UnimplementedError();
   }
 
   @override
-  Future<void> editDrugInCollection(int collectionId, Drug drug) {
+  Future<void> editDrugInCollection(int collectionId, DrugModel drug) {
     // TODO: implement editDrugInCollection
     throw UnimplementedError();
   }
 
   @override
-  Future<List<DrugCollection>> getAllCollections() async {
-    List<DrugCollection> drugCollections = [];
-    final drugModelCollections = await localDataSource.getDrugCollections();
-    for (var element in drugModelCollections) {
-      var collection = DrugCollection(
-        id: element.id,
-        name: element.name,
-        description: element.description,
-        drugs: element.drugs
-            .map((e) => Drug(
-                  id: e.id,
-                  name: e.name,
-                  quantity: e.quantity,
-                  minQuantity: e.minQuantity,
-                  maxQuantity: e.maxQuantity,
-                  category: e.category,
-                ))
-            .toList(),
-      );
-      drugCollections.add(collection);
-    }
-    return drugCollections;
+  Future<List<DrugCollectionModel>> getAllCollections() async {
+    // List<DrugCollectionModel> drugCollections = [];
+    // final drugModelCollections = await localDataSource.getDrugCollections();
+    // for (var element in drugModelCollections) {
+    //   var collection = DrugCollection.fromModel(element);
+    //   drugCollections.add(collection);
+    // }
+    // return drugCollections;
+    return await localDataSource.getDrugCollections();
   }
 
   @override
-  Future<DrugCollection> getCollectionById(int id) {
+  Future<DrugCollectionModel> getCollectionById(int id) {
     // TODO: implement getCollectionById
     throw UnimplementedError();
   }
 
   @override
-  Future<void> updateCollection(DrugCollection collection) {
+  Future<void> updateCollection(DrugCollectionModel collection) {
     // TODO: implement updateCollection
     throw UnimplementedError();
   }

@@ -1,6 +1,7 @@
 import 'package:injectable/injectable.dart';
 
-import '../entities/drug_collection.dart';
+import '../../data/models/drug_collection_model.dart';
+
 import '../repositories/drug_collection_repo.dart';
 
 @injectable
@@ -9,7 +10,7 @@ class AddNewCollection {
 
   AddNewCollection({required this.collectionsRepository});
 
-  Future<void> call(DrugCollection collection) async {
+  Future<void> call(DrugCollectionModel collection) async {
     return await collectionsRepository.addCollection(collection);
   }
 }

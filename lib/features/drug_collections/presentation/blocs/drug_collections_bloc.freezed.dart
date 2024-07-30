@@ -20,21 +20,24 @@ mixin _$DrugCollectionsEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getDrugCollections,
-    required TResult Function(DrugCollection collection) addDrugCollection,
+    required TResult Function(DrugCollectionModel collection) addDrugCollection,
+    required TResult Function(int index) deleteDrugCollection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getDrugCollections,
-    TResult? Function(DrugCollection collection)? addDrugCollection,
+    TResult? Function(DrugCollectionModel collection)? addDrugCollection,
+    TResult? Function(int index)? deleteDrugCollection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getDrugCollections,
-    TResult Function(DrugCollection collection)? addDrugCollection,
+    TResult Function(DrugCollectionModel collection)? addDrugCollection,
+    TResult Function(int index)? deleteDrugCollection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$DrugCollectionsEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_GetDrugCollections value) getDrugCollections,
     required TResult Function(_AddDrugCollection value) addDrugCollection,
+    required TResult Function(_DeleteDrugCollection value) deleteDrugCollection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$DrugCollectionsEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetDrugCollections value)? getDrugCollections,
     TResult? Function(_AddDrugCollection value)? addDrugCollection,
+    TResult? Function(_DeleteDrugCollection value)? deleteDrugCollection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$DrugCollectionsEvent {
     TResult Function(_Started value)? started,
     TResult Function(_GetDrugCollections value)? getDrugCollections,
     TResult Function(_AddDrugCollection value)? addDrugCollection,
+    TResult Function(_DeleteDrugCollection value)? deleteDrugCollection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,7 +127,8 @@ class _$StartedImpl implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getDrugCollections,
-    required TResult Function(DrugCollection collection) addDrugCollection,
+    required TResult Function(DrugCollectionModel collection) addDrugCollection,
+    required TResult Function(int index) deleteDrugCollection,
   }) {
     return started();
   }
@@ -131,7 +138,8 @@ class _$StartedImpl implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getDrugCollections,
-    TResult? Function(DrugCollection collection)? addDrugCollection,
+    TResult? Function(DrugCollectionModel collection)? addDrugCollection,
+    TResult? Function(int index)? deleteDrugCollection,
   }) {
     return started?.call();
   }
@@ -141,7 +149,8 @@ class _$StartedImpl implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getDrugCollections,
-    TResult Function(DrugCollection collection)? addDrugCollection,
+    TResult Function(DrugCollectionModel collection)? addDrugCollection,
+    TResult Function(int index)? deleteDrugCollection,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -156,6 +165,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_GetDrugCollections value) getDrugCollections,
     required TResult Function(_AddDrugCollection value) addDrugCollection,
+    required TResult Function(_DeleteDrugCollection value) deleteDrugCollection,
   }) {
     return started(this);
   }
@@ -166,6 +176,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetDrugCollections value)? getDrugCollections,
     TResult? Function(_AddDrugCollection value)? addDrugCollection,
+    TResult? Function(_DeleteDrugCollection value)? deleteDrugCollection,
   }) {
     return started?.call(this);
   }
@@ -176,6 +187,7 @@ class _$StartedImpl implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_GetDrugCollections value)? getDrugCollections,
     TResult Function(_AddDrugCollection value)? addDrugCollection,
+    TResult Function(_DeleteDrugCollection value)? deleteDrugCollection,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -229,7 +241,8 @@ class _$GetDrugCollectionsImpl implements _GetDrugCollections {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getDrugCollections,
-    required TResult Function(DrugCollection collection) addDrugCollection,
+    required TResult Function(DrugCollectionModel collection) addDrugCollection,
+    required TResult Function(int index) deleteDrugCollection,
   }) {
     return getDrugCollections();
   }
@@ -239,7 +252,8 @@ class _$GetDrugCollectionsImpl implements _GetDrugCollections {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getDrugCollections,
-    TResult? Function(DrugCollection collection)? addDrugCollection,
+    TResult? Function(DrugCollectionModel collection)? addDrugCollection,
+    TResult? Function(int index)? deleteDrugCollection,
   }) {
     return getDrugCollections?.call();
   }
@@ -249,7 +263,8 @@ class _$GetDrugCollectionsImpl implements _GetDrugCollections {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getDrugCollections,
-    TResult Function(DrugCollection collection)? addDrugCollection,
+    TResult Function(DrugCollectionModel collection)? addDrugCollection,
+    TResult Function(int index)? deleteDrugCollection,
     required TResult orElse(),
   }) {
     if (getDrugCollections != null) {
@@ -264,6 +279,7 @@ class _$GetDrugCollectionsImpl implements _GetDrugCollections {
     required TResult Function(_Started value) started,
     required TResult Function(_GetDrugCollections value) getDrugCollections,
     required TResult Function(_AddDrugCollection value) addDrugCollection,
+    required TResult Function(_DeleteDrugCollection value) deleteDrugCollection,
   }) {
     return getDrugCollections(this);
   }
@@ -274,6 +290,7 @@ class _$GetDrugCollectionsImpl implements _GetDrugCollections {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetDrugCollections value)? getDrugCollections,
     TResult? Function(_AddDrugCollection value)? addDrugCollection,
+    TResult? Function(_DeleteDrugCollection value)? deleteDrugCollection,
   }) {
     return getDrugCollections?.call(this);
   }
@@ -284,6 +301,7 @@ class _$GetDrugCollectionsImpl implements _GetDrugCollections {
     TResult Function(_Started value)? started,
     TResult Function(_GetDrugCollections value)? getDrugCollections,
     TResult Function(_AddDrugCollection value)? addDrugCollection,
+    TResult Function(_DeleteDrugCollection value)? deleteDrugCollection,
     required TResult orElse(),
   }) {
     if (getDrugCollections != null) {
@@ -303,7 +321,7 @@ abstract class _$$AddDrugCollectionImplCopyWith<$Res> {
           $Res Function(_$AddDrugCollectionImpl) then) =
       __$$AddDrugCollectionImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({DrugCollection collection});
+  $Res call({DrugCollectionModel collection});
 }
 
 /// @nodoc
@@ -323,7 +341,7 @@ class __$$AddDrugCollectionImplCopyWithImpl<$Res>
       null == collection
           ? _value.collection
           : collection // ignore: cast_nullable_to_non_nullable
-              as DrugCollection,
+              as DrugCollectionModel,
     ));
   }
 }
@@ -334,7 +352,7 @@ class _$AddDrugCollectionImpl implements _AddDrugCollection {
   const _$AddDrugCollectionImpl(this.collection);
 
   @override
-  final DrugCollection collection;
+  final DrugCollectionModel collection;
 
   @override
   String toString() {
@@ -365,7 +383,8 @@ class _$AddDrugCollectionImpl implements _AddDrugCollection {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getDrugCollections,
-    required TResult Function(DrugCollection collection) addDrugCollection,
+    required TResult Function(DrugCollectionModel collection) addDrugCollection,
+    required TResult Function(int index) deleteDrugCollection,
   }) {
     return addDrugCollection(collection);
   }
@@ -375,7 +394,8 @@ class _$AddDrugCollectionImpl implements _AddDrugCollection {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getDrugCollections,
-    TResult? Function(DrugCollection collection)? addDrugCollection,
+    TResult? Function(DrugCollectionModel collection)? addDrugCollection,
+    TResult? Function(int index)? deleteDrugCollection,
   }) {
     return addDrugCollection?.call(collection);
   }
@@ -385,7 +405,8 @@ class _$AddDrugCollectionImpl implements _AddDrugCollection {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getDrugCollections,
-    TResult Function(DrugCollection collection)? addDrugCollection,
+    TResult Function(DrugCollectionModel collection)? addDrugCollection,
+    TResult Function(int index)? deleteDrugCollection,
     required TResult orElse(),
   }) {
     if (addDrugCollection != null) {
@@ -400,6 +421,7 @@ class _$AddDrugCollectionImpl implements _AddDrugCollection {
     required TResult Function(_Started value) started,
     required TResult Function(_GetDrugCollections value) getDrugCollections,
     required TResult Function(_AddDrugCollection value) addDrugCollection,
+    required TResult Function(_DeleteDrugCollection value) deleteDrugCollection,
   }) {
     return addDrugCollection(this);
   }
@@ -410,6 +432,7 @@ class _$AddDrugCollectionImpl implements _AddDrugCollection {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetDrugCollections value)? getDrugCollections,
     TResult? Function(_AddDrugCollection value)? addDrugCollection,
+    TResult? Function(_DeleteDrugCollection value)? deleteDrugCollection,
   }) {
     return addDrugCollection?.call(this);
   }
@@ -420,6 +443,7 @@ class _$AddDrugCollectionImpl implements _AddDrugCollection {
     TResult Function(_Started value)? started,
     TResult Function(_GetDrugCollections value)? getDrugCollections,
     TResult Function(_AddDrugCollection value)? addDrugCollection,
+    TResult Function(_DeleteDrugCollection value)? deleteDrugCollection,
     required TResult orElse(),
   }) {
     if (addDrugCollection != null) {
@@ -430,13 +454,161 @@ class _$AddDrugCollectionImpl implements _AddDrugCollection {
 }
 
 abstract class _AddDrugCollection implements DrugCollectionsEvent {
-  const factory _AddDrugCollection(final DrugCollection collection) =
+  const factory _AddDrugCollection(final DrugCollectionModel collection) =
       _$AddDrugCollectionImpl;
 
-  DrugCollection get collection;
+  DrugCollectionModel get collection;
   @JsonKey(ignore: true)
   _$$AddDrugCollectionImplCopyWith<_$AddDrugCollectionImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteDrugCollectionImplCopyWith<$Res> {
+  factory _$$DeleteDrugCollectionImplCopyWith(_$DeleteDrugCollectionImpl value,
+          $Res Function(_$DeleteDrugCollectionImpl) then) =
+      __$$DeleteDrugCollectionImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int index});
+}
+
+/// @nodoc
+class __$$DeleteDrugCollectionImplCopyWithImpl<$Res>
+    extends _$DrugCollectionsEventCopyWithImpl<$Res, _$DeleteDrugCollectionImpl>
+    implements _$$DeleteDrugCollectionImplCopyWith<$Res> {
+  __$$DeleteDrugCollectionImplCopyWithImpl(_$DeleteDrugCollectionImpl _value,
+      $Res Function(_$DeleteDrugCollectionImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_$DeleteDrugCollectionImpl(
+      null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteDrugCollectionImpl implements _DeleteDrugCollection {
+  const _$DeleteDrugCollectionImpl(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'DrugCollectionsEvent.deleteDrugCollection(index: $index)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteDrugCollectionImpl &&
+            (identical(other.index, index) || other.index == index));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, index);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteDrugCollectionImplCopyWith<_$DeleteDrugCollectionImpl>
+      get copyWith =>
+          __$$DeleteDrugCollectionImplCopyWithImpl<_$DeleteDrugCollectionImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getDrugCollections,
+    required TResult Function(DrugCollectionModel collection) addDrugCollection,
+    required TResult Function(int index) deleteDrugCollection,
+  }) {
+    return deleteDrugCollection(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getDrugCollections,
+    TResult? Function(DrugCollectionModel collection)? addDrugCollection,
+    TResult? Function(int index)? deleteDrugCollection,
+  }) {
+    return deleteDrugCollection?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getDrugCollections,
+    TResult Function(DrugCollectionModel collection)? addDrugCollection,
+    TResult Function(int index)? deleteDrugCollection,
+    required TResult orElse(),
+  }) {
+    if (deleteDrugCollection != null) {
+      return deleteDrugCollection(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetDrugCollections value) getDrugCollections,
+    required TResult Function(_AddDrugCollection value) addDrugCollection,
+    required TResult Function(_DeleteDrugCollection value) deleteDrugCollection,
+  }) {
+    return deleteDrugCollection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetDrugCollections value)? getDrugCollections,
+    TResult? Function(_AddDrugCollection value)? addDrugCollection,
+    TResult? Function(_DeleteDrugCollection value)? deleteDrugCollection,
+  }) {
+    return deleteDrugCollection?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetDrugCollections value)? getDrugCollections,
+    TResult Function(_AddDrugCollection value)? addDrugCollection,
+    TResult Function(_DeleteDrugCollection value)? deleteDrugCollection,
+    required TResult orElse(),
+  }) {
+    if (deleteDrugCollection != null) {
+      return deleteDrugCollection(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteDrugCollection implements DrugCollectionsEvent {
+  const factory _DeleteDrugCollection(final int index) =
+      _$DeleteDrugCollectionImpl;
+
+  int get index;
+  @JsonKey(ignore: true)
+  _$$DeleteDrugCollectionImplCopyWith<_$DeleteDrugCollectionImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -445,7 +617,7 @@ mixin _$DrugCollectionsState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<DrugCollection> drugCollections) loaded,
+    required TResult Function(List<DrugCollectionModel> drugCollections) loaded,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -453,7 +625,7 @@ mixin _$DrugCollectionsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<DrugCollection> drugCollections)? loaded,
+    TResult? Function(List<DrugCollectionModel> drugCollections)? loaded,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -461,7 +633,7 @@ mixin _$DrugCollectionsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<DrugCollection> drugCollections)? loaded,
+    TResult Function(List<DrugCollectionModel> drugCollections)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -552,7 +724,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<DrugCollection> drugCollections) loaded,
+    required TResult Function(List<DrugCollectionModel> drugCollections) loaded,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -563,7 +735,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<DrugCollection> drugCollections)? loaded,
+    TResult? Function(List<DrugCollectionModel> drugCollections)? loaded,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -574,7 +746,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<DrugCollection> drugCollections)? loaded,
+    TResult Function(List<DrugCollectionModel> drugCollections)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -666,7 +838,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<DrugCollection> drugCollections) loaded,
+    required TResult Function(List<DrugCollectionModel> drugCollections) loaded,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -677,7 +849,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<DrugCollection> drugCollections)? loaded,
+    TResult? Function(List<DrugCollectionModel> drugCollections)? loaded,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -688,7 +860,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<DrugCollection> drugCollections)? loaded,
+    TResult Function(List<DrugCollectionModel> drugCollections)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -746,7 +918,7 @@ abstract class _$$LoadedImplCopyWith<$Res> {
           _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
       __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<DrugCollection> drugCollections});
+  $Res call({List<DrugCollectionModel> drugCollections});
 }
 
 /// @nodoc
@@ -766,7 +938,7 @@ class __$$LoadedImplCopyWithImpl<$Res>
       drugCollections: null == drugCollections
           ? _value._drugCollections
           : drugCollections // ignore: cast_nullable_to_non_nullable
-              as List<DrugCollection>,
+              as List<DrugCollectionModel>,
     ));
   }
 }
@@ -774,12 +946,12 @@ class __$$LoadedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl({required final List<DrugCollection> drugCollections})
+  const _$LoadedImpl({required final List<DrugCollectionModel> drugCollections})
       : _drugCollections = drugCollections;
 
-  final List<DrugCollection> _drugCollections;
+  final List<DrugCollectionModel> _drugCollections;
   @override
-  List<DrugCollection> get drugCollections {
+  List<DrugCollectionModel> get drugCollections {
     if (_drugCollections is EqualUnmodifiableListView) return _drugCollections;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_drugCollections);
@@ -814,7 +986,7 @@ class _$LoadedImpl implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<DrugCollection> drugCollections) loaded,
+    required TResult Function(List<DrugCollectionModel> drugCollections) loaded,
     required TResult Function(String message) error,
   }) {
     return loaded(drugCollections);
@@ -825,7 +997,7 @@ class _$LoadedImpl implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<DrugCollection> drugCollections)? loaded,
+    TResult? Function(List<DrugCollectionModel> drugCollections)? loaded,
     TResult? Function(String message)? error,
   }) {
     return loaded?.call(drugCollections);
@@ -836,7 +1008,7 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<DrugCollection> drugCollections)? loaded,
+    TResult Function(List<DrugCollectionModel> drugCollections)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -885,10 +1057,11 @@ class _$LoadedImpl implements _Loaded {
 }
 
 abstract class _Loaded implements DrugCollectionsState {
-  const factory _Loaded({required final List<DrugCollection> drugCollections}) =
+  const factory _Loaded(
+          {required final List<DrugCollectionModel> drugCollections}) =
       _$LoadedImpl;
 
-  List<DrugCollection> get drugCollections;
+  List<DrugCollectionModel> get drugCollections;
   @JsonKey(ignore: true)
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -960,7 +1133,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<DrugCollection> drugCollections) loaded,
+    required TResult Function(List<DrugCollectionModel> drugCollections) loaded,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -971,7 +1144,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<DrugCollection> drugCollections)? loaded,
+    TResult? Function(List<DrugCollectionModel> drugCollections)? loaded,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -982,7 +1155,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<DrugCollection> drugCollections)? loaded,
+    TResult Function(List<DrugCollectionModel> drugCollections)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {

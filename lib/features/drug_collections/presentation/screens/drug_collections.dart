@@ -5,6 +5,8 @@ import 'package:daily_drugs/features/drug_collections/presentation/blocs/drug_co
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../data/models/drug_collection_model.dart';
+
 class DrugCollectionsScreen extends StatelessWidget {
   const DrugCollectionsScreen({super.key});
 
@@ -59,16 +61,28 @@ class DrugCollectionsScreen extends StatelessWidget {
               onPressed: () {
                 context.read<DrugCollectionsBloc>().add(
                       DrugCollectionsEvent.addDrugCollection(
-                        DrugCollection(
-                            id: 2,
-                            name: "Daily Drugs Order",
-                            description: "This is the daily drugs order for Dialysis",
-                            drugs: []),
+                        DrugCollectionModel()
+                          ..name = "Daily Drugs Order 1"
+                          ..description = "This is the daily drugs order for Dialysis",
                       ),
                     );
                 print("pressed");
               },
               child: const Text('Add a Collection'),
+            ),
+            const SizedBox(height: AppSizes.xl),
+            ElevatedButton(
+              onPressed: () {
+                context.read<DrugCollectionsBloc>().add(
+                      DrugCollectionsEvent.addDrugCollection(
+                        DrugCollectionModel()
+                          ..name = "Daily Drugs Order 2"
+                          ..description = "This is the daily drugs order for Dialysis",
+                      ),
+                    );
+                print("delete pressed");
+              },
+              child: const Text('Delete Collection'),
             ),
           ],
         ),

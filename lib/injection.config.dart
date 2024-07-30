@@ -16,6 +16,8 @@ import 'package:daily_drugs/features/drug_collections/domain/repositories/drug_c
     as _i546;
 import 'package:daily_drugs/features/drug_collections/domain/usecases/add_new_collection.dart'
     as _i176;
+import 'package:daily_drugs/features/drug_collections/domain/usecases/delete_drug_collection.dart'
+    as _i906;
 import 'package:daily_drugs/features/drug_collections/domain/usecases/get_all_collections.dart'
     as _i849;
 import 'package:daily_drugs/features/drug_collections/presentation/blocs/drug_collections_bloc.dart'
@@ -43,6 +45,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i849.GetAllCollections>(() => _i849.GetAllCollections(
         collectionsRepository: gh<_i546.DrugCollectionRepo>()));
     gh.factory<_i176.AddNewCollection>(() => _i176.AddNewCollection(
+        collectionsRepository: gh<_i546.DrugCollectionRepo>()));
+    gh.factory<_i906.DeleteDrugCollection>(() => _i906.DeleteDrugCollection(
         collectionsRepository: gh<_i546.DrugCollectionRepo>()));
     return this;
   }
