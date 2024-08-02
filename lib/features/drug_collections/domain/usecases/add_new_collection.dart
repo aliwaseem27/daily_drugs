@@ -10,7 +10,11 @@ class AddNewCollection {
 
   AddNewCollection({required this.collectionsRepository});
 
-  Future<void> call(DrugCollectionModel collection) async {
+  Future<void> call(String name, String description) async {
+    final collection = DrugCollectionModel()
+      ..name = name
+      ..description = description;
+
     return await collectionsRepository.addCollection(collection);
   }
 }

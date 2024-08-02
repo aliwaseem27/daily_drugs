@@ -37,17 +37,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
       appBar: AppBar(
         title: Text(_listPage[_selectedIndex].toString()),
       ),
-      body: MultiBlocProvider(
-        providers: [
-          BlocProvider<DrugsOrderBloc>(
-            create: (context) => DrugsOrderBloc()..add(const DrugsOrderEvent.loadDrugs()),
-          ),
-          BlocProvider(
-            create: (context) => getIt<DrugCollectionsBloc>()..add(const DrugCollectionsEvent.getDrugCollections()),
-          ),
-        ],
-        child: _listPage.elementAt(_selectedIndex),
-      ),
+      body: _listPage.elementAt(_selectedIndex),
       drawer: Drawer(
         child: ListView(
           children: [

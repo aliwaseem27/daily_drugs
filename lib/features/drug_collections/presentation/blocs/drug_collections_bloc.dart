@@ -31,7 +31,7 @@ class DrugCollectionsBloc extends Bloc<DrugCollectionsEvent, DrugCollectionsStat
     });
 
     on<_AddDrugCollection>((event, emit) async {
-      await getIt<AddNewCollection>().call(event.collection);
+      await getIt<AddNewCollection>().call(event.name, event.description);
       print("Collection Added");
     });
 
